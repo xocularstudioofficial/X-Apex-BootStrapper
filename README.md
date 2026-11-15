@@ -5,11 +5,11 @@
 
 <h1>X-APEX BOOTSTRAPPER</h1>
 
-**A proprietary C++20 / Win32 alternative launcher and client configuration utility for Roblox on Windows, developed by X-Ocular Studio.**
+**A proprietary Windows launcher and configuration utility for Roblox, developed by X-Ocular Studio.**
 
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20(x64)-FF6B00?style=for-the-badge&logo=windows&logoColor=white)
 ![Language](https://img.shields.io/badge/Built%20With-C%2B%2B20%20%2F%20Win32-1A1A1A?style=for-the-badge&logo=cplusplus&logoColor=FF6B00)
-![Status](https://img.shields.io/badge/Release-v0.3.0-FF6B00?style=for-the-badge)
+![Release](https://img.shields.io/badge/Release-v0.3.0-FF6B00?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)
 
 </div>
@@ -18,64 +18,72 @@
 
 ## Overview
 
-**X-Apex Bootstrapper** is a native Windows desktop launcher and configuration utility built with C++20, the Win32 API, and Microsoft Edge WebView2. It is designed to manage local Roblox client settings, apply local asset overrides, browse public game servers, and monitor basic system resource usage from a single interface.
+X-Apex Bootstrapper is a native Windows desktop application built with C++20, the Win32 API, and Microsoft Edge WebView2. It provides launch, local configuration, and system telemetry features for Roblox sessions.
 
-> **Disclaimer:** X-Apex Bootstrapper is an independent third-party utility and is not affiliated with, endorsed, or officially supported by Roblox Corporation. Use of third-party launchers and client configuration tools is at your own discretion and risk.
+X-Apex Bootstrapper is an independent third-party project. It is not affiliated with, endorsed by, or officially supported by Roblox Corporation. Roblox does not officially support third-party launchers or tools that modify local client files or processes. Users are responsible for reviewing applicable platform terms and deciding whether to use these features.
 
----
+## Features
 
-## Documented Features
+### Local configuration and profiles
 
-- **Local FastFlags & Configuration Management:**
-  - Provides a table editor and raw JSON editor for managing local `ClientAppSettings.json` profiles.
-  - Includes optional presets for common rendering and graphics flags (such as Direct3D 11 / Vulkan selection, lighting modes, and MSAA).
-  - Allows editing local `GlobalBasicSettings_13.xml` parameters (target framerate, fullscreen state, audio volume, and mouse sensitivity), with an optional `Read-Only` file attribute toggle.
-- **Local Client Asset Overrides:**
-  - Supports replacing local client asset files on disk, including custom fonts (`.ttf`, `.otf`), audio files, mouse cursors, and Shift Lock icons.
-- **Public Server Browser & Session Launching:**
-  - Queries publicly available server instance data via Roblox web endpoints to display player counts, estimated latency, and server metrics.
-  - Supports launching the official Roblox client into a selected `PlaceId` / `JobId` or choosing a server based on player count or latency filters.
-- **System Resource Telemetry & Process Options:**
-  - Displays real-time CPU usage, system RAM usage, and `RobloxPlayerBeta.exe` memory consumption.
-  - Includes optional Windows API controls for process scheduling priority, CPU core affinity, Windows 11 power-throttling states (`PROCESS_POWER_THROTTLING_EXECUTION_SPEED`), multimedia timer resolution (`timeBeginPeriod`), and working-set memory trimming (`EmptyWorkingSet`).
-  - Includes an option to terminate `RobloxCrashHandler.exe` in the background.
-- **Win32 Overlay Window (`Insert` Hotkey):**
-  - Displays an Always-on-Top translucent Win32 overlay window showing basic system telemetry and quick-launch controls without switching windows.
-- **Multi-Instance Session Option (`ROBLOX_singletonMutex`):**
-  - Attempts to close or manage the `ROBLOX_singletonMutex` handle to allow launching multiple client instances simultaneously. *(Note: Running multiple Roblox clients simultaneously is not officially supported by Roblox.)*
-- **Additional Utilities:**
-  - Discord Rich Presence integration for displaying active game sessions.
-  - JSON configuration export and import.
-  - Interface localization in English, Serbian, and German.
+- View and edit local `ClientAppSettings.json` profiles using a table editor or raw JSON editor.
+- Use optional presets for rendering and graphics settings, including API selection, lighting modes, and MSAA.
+- Edit selected values in `GlobalBasicSettings_13.xml`, including framerate target, fullscreen state, audio volume, and mouse sensitivity.
+- Optionally set edited configuration files to read-only.
+- Export and import application configuration in JSON format.
 
----
+### Local client asset customization
+
+- Replace selected local client assets, including fonts (`.ttf`, `.otf`), audio files, mouse cursors, and Shift Lock icons.
+- These features modify files on the local system. Back up files before making changes; client updates may overwrite them or cause compatibility issues.
+
+### Server browsing and launching
+
+- Display publicly available Roblox server information, including player counts and estimated latency.
+- Filter or select a server using player-count or latency preferences and launch the official Roblox client for a selected `PlaceId` / `JobId`.
+- Server information and availability may change, and this utility is not an official Roblox service.
+
+### System telemetry and process options
+
+- Display CPU usage, system memory usage, and `RobloxPlayerBeta.exe` memory consumption.
+- Provide optional Windows process settings, including process scheduling priority, CPU affinity, power-throttling settings, and timer-resolution requests.
+- Provide an option to terminate `RobloxCrashHandler.exe`.
+- These options affect local system or process behavior. Use them only if you understand their effects; results can vary by Windows version and hardware.
+
+### Overlay and session options
+
+- Show a translucent, always-on-top Win32 overlay with system telemetry and launch controls. The default toggle key is `Insert`.
+- Include an option to manage the `ROBLOX_singletonMutex` for launching multiple client instances. Roblox does not officially support this use; compatibility and account or platform consequences are not guaranteed.
+
+### Other utilities
+
+- Discord Rich Presence for displaying active game session information.
+- Interface localization in English, Serbian, and German.
+- A native installer and update workflow.
 
 ## Installation
 
-1. Open the **[Releases](../../releases)** page of this repository.
-2. Download the official installer package (`X-Apex_Installer_v0.3.0.exe`) exclusively from the **Assets** section of the latest release.
-3. Run the installer and follow the on-screen setup instructions. Existing user profiles and local configuration files are preserved during updates.
+1. Visit this repository's [Releases](../../releases) page.
+2. Download the installer from the Assets section of the release.
+3. Run the installer and follow its on-screen instructions.
 
----
+Existing profiles and local configuration files are intended to be preserved during updates. Back up important files before installing or updating.
 
-## Security Notices & Known Limitations
+## Security and limitations
 
-- **Unsigned Binary:** The distributed executable and installer are currently **not digitally signed** with a commercial Code Signing certificate. Windows Defender SmartScreen or third-party antivirus software may display a warning for unrecognized publishers. Only download releases directly from this official repository and verify file checksums (SHA-256) when provided in the release notes.
-- **Closed-Source Distribution:** Because the C++ source code is proprietary and not publicly hosted in this repository, third parties cannot independently audit the compiled binaries.
-- **Third-Party Software Policy:** Roblox does not officially support third-party bootstrappers, multi-instance tools, or external process modifications. Future Roblox client or anti-cheat updates may break compatibility or restrict the use of external utilities.
-- **Process & File Modifications:** Features that alter process priority, terminate `RobloxCrashHandler.exe`, lock configuration files as `Read-Only`, or manage `ROBLOX_singletonMutex` interact directly with Windows processes and local client files, which may cause client instability or conflicts with security software.
+- **Unsigned installer:** The installer is not currently digitally signed with a commercial code-signing certificate. Windows SmartScreen or antivirus software may display a warning. A warning alone does not establish whether a file is safe or unsafe.
+- Download the installer only from this repository's official Releases page. If you cannot verify the file's source or integrity, do not run it. Do not rely on this README as proof that a binary is safe.
+- **Closed-source software:** The application source code is not published in this repository, so independent review of the distributed binary is not available here.
+- **Local changes:** Some features edit local configuration or asset files, or affect running processes. Back up relevant files and review each option before use.
+- **Compatibility:** Roblox, Windows, or third-party software updates may change behavior or break compatibility. No compatibility or uninterrupted operation is guaranteed.
 
----
+## Support and bug reports
 
-## Support & Bug Reports
+- In the application, open **Settings / Bootstrapper → Open Logs** to access diagnostic logs.
+- Report bugs or compatibility issues in the repository's [Issues](../../issues) section. Include the app version, Windows version, steps to reproduce the issue, and relevant logs. Remove personal or sensitive information from logs before sharing them.
 
-- **Diagnostic Logs:** You can access local diagnostic logs inside the application via **Settings / Bootstrapper → Open Logs**.
-- **Issue Tracker:** Report bugs or compatibility issues in the **[Issues](../../issues)** tab of this repository.
+## License and copyright
 
----
+© 2026 X-Ocular Studio. All Rights Reserved.
 
-## License & Copyright
-
-© 2026 **X-Ocular Studio**. **All Rights Reserved.**
-
-This software is **proprietary (closed-source)** software, not open-source. No license is granted to copy, modify, distribute, decompile, reverse-engineer, or create derivative works from the binaries, installers, branding, or associated assets without prior written permission from **X-Ocular Studio**.
+This software is proprietary and closed-source. No rights to copy, modify, distribute, reverse-engineer, or create derivative works from the software or its associated assets are granted without prior written permission from the rights holder.
