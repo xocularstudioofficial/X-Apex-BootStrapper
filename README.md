@@ -87,3 +87,6 @@ Existing profiles and local configuration files are intended to be preserved dur
 © 2026 X-Ocular Studio. All Rights Reserved.
 
 This software is proprietary and closed-source. No rights to copy, modify, distribute, reverse-engineer, or create derivative works from the software or its associated assets are granted without prior written permission from the rights holder.
+
+<br><br>
+<img src="banner.png" width="640">
