@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="banner.jpg" alt="X-Ocular Studio Banner" width="100%">
+<img src="banner.gif" width="640">
 <br><br>
 
 <h1>X-APEX BOOTSTRAPPER</h1>
