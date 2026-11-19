@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="banner.gif" width="640">
+<img src="banner1.jpg" width="640">
 <br><br>
 
 <h1>X-APEX BOOTSTRAPPER</h1>
@@ -9,7 +9,7 @@
 
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20(x64)-FF6B00?style=for-the-badge&logo=windows&logoColor=white)
 ![Language](https://img.shields.io/badge/Built%20With-C%2B%2B20%20%2F%20Win32-1A1A1A?style=for-the-badge&logo=cplusplus&logoColor=FF6B00)
-![Release](https://img.shields.io/badge/Release-v0.5.1-FF6B00?style=for-the-badge)
+![Release](https://img.shields.io/badge/Release-v01.0.0-FF6B00?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)
 
 </div>
@@ -88,5 +88,3 @@ Existing profiles and local configuration files are intended to be preserved dur
 
 This software is proprietary and closed-source. No rights to copy, modify, distribute, reverse-engineer, or create derivative works from the software or its associated assets are granted without prior written permission from the rights holder.
 
-<br><br>
-<img src="og-x-apex-bootstrapper.png" width="640">
