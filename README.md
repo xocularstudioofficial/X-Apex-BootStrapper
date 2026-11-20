@@ -9,7 +9,7 @@
 
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20(x64)-FF6B00?style=for-the-badge&logo=windows&logoColor=white)
 ![Language](https://img.shields.io/badge/Built%20With-C%2B%2B20%20%2F%20Win32-1A1A1A?style=for-the-badge&logo=cplusplus&logoColor=FF6B00)
-![Release](https://img.shields.io/badge/Release-v01.0.0-FF6B00?style=for-the-badge)
+![Release](https://img.shields.io/badge/Release-v01.0.1-FF6B00?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)
 
 </div>
